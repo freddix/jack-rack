@@ -1,0 +1,11 @@
+diff -aurN jack-rack-1.4.6.orig/src/Makefile.am jack-rack-1.4.6/src/Makefile.am
+--- jack-rack-1.4.6.orig/src/Makefile.am	2007-07-27 15:53:06.000000000 +0200
++++ jack-rack-1.4.6/src/Makefile.am	2007-11-16 18:55:21.000000000 +0100
+@@ -56,7 +56,6 @@
+ 	-DPIXMAPDIR=\"$(pixmapdir)\" \
+ 	-DDTDDIR=\"$(dtddir)\" \
+ 	-DG_DISABLE_DEPRECATED=1 \
+-	-DGTK_DISABLE_DEPRECATED=1 \
+ 	-DGDK_DISABLE_DEPRECATED=1 \
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED=1 \
+ 	-DGNOME_DISABLE_DEPRECATED=1

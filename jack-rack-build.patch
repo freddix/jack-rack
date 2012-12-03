@@ -1,0 +1,24 @@
+diff -aurN jack-rack-1.4.7.orig/configure.ac jack-rack-1.4.7/configure.ac
+--- jack-rack-1.4.7.orig/configure.ac	2012-12-01 20:43:51.283168782 +0100
++++ jack-rack-1.4.7/configure.ac	2012-12-01 21:18:01.070479119 +0100
+@@ -194,9 +194,7 @@
+ ])
+ 
+ if test x"$jr_enable_lrdf" = x"yes"; then
+-  AC_CHECK_HEADER(lrdf.h,
+-    AC_CHECK_LIB(lrdf, lrdf_init, LRDF_FOUND="yes", LRDF_FOUND="no"),
+-    LRDF_FOUND="no")
++  AC_CHECK_LIB(lrdf, lrdf_init, LRDF_FOUND="yes", LRDF_FOUND="no")
+ else
+   AC_MSG_WARN([lrdf support is disabled])
+   LRDF_FOUND="no"
+@@ -204,8 +202,7 @@
+ 
+ if test x$LRDF_FOUND = xyes; then
+   AC_DEFINE(HAVE_LRDF, 1, "whether or not lrdf support is enabled")
+-  LRDF_CFLAGS=""
+-  LRDF_LIBS="-llrdf"
++  PKG_CHECK_MODULES(LRDF, lrdf)
+   AC_SUBST(LRDF_CFLAGS)
+   AC_SUBST(LRDF_LIBS)
+ fi

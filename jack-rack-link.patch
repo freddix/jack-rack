@@ -1,0 +1,21 @@
+diff -aurN jack-rack-1.4.7.orig/src/Makefile.am jack-rack-1.4.7/src/Makefile.am
+--- jack-rack-1.4.7.orig/src/Makefile.am	2012-12-01 20:43:51.283168782 +0100
++++ jack-rack-1.4.7/src/Makefile.am	2012-12-01 20:45:53.183192390 +0100
+@@ -61,14 +61,15 @@
+ 	-DGNOME_DISABLE_DEPRECATED=1
+ 
+ 
+-jack_rack_LDFLAGS = \
++jack_rack_LDADD = \
+ 	$(JACK_LIBS) \
+ 	$(GTK_LIBS) \
+ 	$(GNOMEUI_LIBS) \
+ 	$(LASH_LIBS) \
+ 	$(LRDF_LIBS) \
+ 	$(ALSA_LIBS) \
+-	$(XML_LIBS)
++	$(XML_LIBS) \
++	-ldl -lm
+ 
+ splint-check:
+ 	splint  +systemdirs /usr/include:/usr/local/lib \
